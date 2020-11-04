@@ -11,6 +11,14 @@ package puissance4_forssant_sarinena;
  */
 public class Grille {
     Cellule Cellules[][] = new Cellule[6][7];
+    
+    Grille(){
+        for (int l=0; l<6; l++){
+            for (int c=0; c<7; c++){
+                Cellules[l][c] = new Cellule();
+            }
+        }
+    }
      
 
 public boolean ajouterJetonDansColonne(Jeton unJeton, int c){
@@ -50,31 +58,33 @@ public void viderGrille(){
 
 public void  afficherGrilleSurConsole() {
     
-    for (int i=5; i>=0; i--){
-        for (int j=0; j<7; j++){
-            if (Cellules[i][j].trouNoir != false){
-                System.out.println("T");
+    for (int l=5; l>=0; l--){
+        for (int c=0; c<7; c++){
+            if (Cellules[l][c].trouNoir != false){
+                System.out.print("T");
             }
-            else if (Cellules[i][j].desintegrateur != false){
-                System.out.println("D");
+            else if (Cellules[l][c].desintegrateur != false){
+                System.out.print("D");
             }
-            else if (Cellules[i][j].jetonCourant == null){
-                System.out.println("N");
+            else if (Cellules[l][c].jetonCourant == null){
+                System.out.print("N");
             }
-            else {
-                if ((Cellules[i][j].jetonCourant.Couleur)!= "Rouge"){
-                    System.out.println("J");
+            else if ((Cellules[l][c].jetonCourant.Couleur)!= "Rouge"){
+                    System.out.print("J");
+                 }
+            else{
+                    System.out.print("R");
                 }
-            }
+                  
         }
-        System.out.println(" " + (i+1));
+        System.out.println(" " + (l+1));
     }
     for (int i=0; i<7; i++){
-        System.out.println(" " + (i+1) + " ");
+        System.out.print((i+1));
     }
     System.out.println();
 }
-
+   
 
 public boolean  celluleOccupee(int l, int c){
     if (Cellules[l][c].jetonCourant != null){
@@ -93,6 +103,7 @@ public boolean etreGagnantePourJoueur(Joueur unNom){
     for (int i=0; i<6-4;i++){
         for (int j=0; j<7-4; j++){
             if (LigneAligne(i,j) || ColonneAligne(i,j) || DiagoAscAligne(i,j) || DiagoDesAligne(i,j)== true){
+                System.out.println("gagne");
                 return true;
             }
         }
@@ -159,7 +170,7 @@ public boolean  colonneRemplie(int c){
 }
 
 public boolean  placerDesintegrateur(int l, int c){
-    if (Cellules[l][c].desintegrateur){
+    if (Cellules[l][c].desintegrateur == false){
         Cellules[l][c].desintegrateur = true;
         return true;
     }
@@ -167,7 +178,7 @@ public boolean  placerDesintegrateur(int l, int c){
 }
 
 public boolean  placerTrouNoir(int l, int c){
-    if (Cellules[l][c].trouNoir){
+    if (Cellules[l][c].trouNoir == false){
         Cellules[l][c].trouNoir = true;
         return true;
     }

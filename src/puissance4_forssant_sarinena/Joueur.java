@@ -21,22 +21,22 @@ public class Joueur {
     
 public Joueur (String unNom) {
     Nom = unNom;
+    nombreDesintegrateurs = 0;
+    nombreJetons_restants = 0;
 }  
 
 public void affecterCouleur (String uneCouleur){
     Couleur = uneCouleur ;
 }
 
-public boolean ajouterJeton(Jeton unJeton){
-    for (int i=0; i<21; i++){
-        if (ListeJetons[i]==null){
-            ListeJetons[i]=unJeton;
-    }
-        break;
-    }
-    return true;
-    }
+public void ajouterJeton(Jeton unJeton){
+    ListeJetons[nombreJetons_restants++] = unJeton;
+}
 
+public Jeton enleverJeton(){
+    nombreJetons_restants -=1;
+    return ListeJetons[nombreJetons_restants];
+}
 
 public void obtenirDesintegrateur(){
     nombreDesintegrateurs+=1;

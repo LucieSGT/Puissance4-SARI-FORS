@@ -24,12 +24,4 @@ public String LireCouleur (){
     return Couleur;
 }
 
-@Override
-public String toString(){
-    if("Rouge".equals(Couleur))
-        return "R";
-    return "J";
-}
-
-
 }
