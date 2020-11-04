@@ -50,6 +50,7 @@ public void initialiserPartie(){
     }
     else {
         System.out.println(Joueur2.Nom + "commence à jouer");
+        joueurCourant = Joueur2;
     }
 }        
         

@@ -14,7 +14,7 @@ import java.util.Random;
 public class Joueur {
     String Nom;
     String Couleur;
-    Jeton[] ListeJetons; 
+    Jeton ListeJetons[] = new Jeton[21]; 
     int nombreDesintegrateurs;
     int nombreJetons_restants;
     
@@ -27,10 +27,10 @@ public void affecterCouleur (String uneCouleur){
     Couleur = uneCouleur ;
 }
 
-public boolean ajouterJeton(Jeton JetonCourant){
+public boolean ajouterJeton(Jeton unJeton){
     for (int i=0; i<21; i++){
         if (ListeJetons[i]==null){
-            ListeJetons[i]=JetonCourant;
+            ListeJetons[i]=unJeton;
     }
         break;
     }

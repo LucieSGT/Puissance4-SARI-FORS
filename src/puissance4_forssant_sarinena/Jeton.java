@@ -27,8 +27,8 @@ public String LireCouleur (){
 @Override
 public String toString(){
     if("Rouge".equals(Couleur))
-        return "\u0018(31n O";
-    return "\u0018(33n 0";
+        return "R";
+    return "J";
 }
 
 
