@@ -63,14 +63,13 @@ public void debuterPartie(){
     //Menu();
     GrilleJeu.afficherGrilleSurConsole();// ajouter condition qui gagne qui perd dans autre méthode continuerpartie
     jouerJeton();
-    GrilleJeu.etreGagnantePourJoueur(joueurCourant);
-    CouleurSuivante(joueurCourant);
+    //CouleurSuivante(joueurCourant);
     jouerJeton();
-    GrilleJeu.etreGagnantePourJoueur(joueurCourant);
+    //GrilleJeu.etreGagnantePourJoueur(joueurCourant);
     jouerJeton();
-    GrilleJeu.etreGagnantePourJoueur(joueurCourant);
+    //GrilleJeu.etreGagnantePourJoueur(joueurCourant);
     jouerJeton();
-    GrilleJeu.etreGagnantePourJoueur(joueurCourant);
+    //GrilleJeu.etreGagnantePourJoueur(joueurCourant);
 }   
 
 public int Menu(){

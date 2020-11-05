@@ -80,7 +80,7 @@ public String lireCouleurDuJeton(){
     if (jetonCourant == null){
         return "jeton vide";
     }
-    System.out.println("La couleur du jeton est ");
+    System.out.println("La couleur du jeton est " + jetonCourant.Couleur);
     return jetonCourant.Couleur;
 }
 

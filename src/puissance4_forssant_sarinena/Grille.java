@@ -102,7 +102,7 @@ public String  lireCouleurDuJeton(int l, int c){
 public boolean etreGagnantePourJoueur(Joueur unNom){
     for (int i=0; i<6-4;i++){
         for (int j=0; j<7-4; j++){
-            if (LigneAligne(i,j) || ColonneAligne(i,j) || DiagoAscAligne(i,j) || DiagoDesAligne(i,j)== true){
+            if (LigneAligne(i,j) /*|| ColonneAligne(i,j) || DiagoAscAligne(i,j) || DiagoDesAligne(i,j)*/!= false){
                 System.out.println("gagne");
                 return true;
             }
@@ -113,21 +113,47 @@ public boolean etreGagnantePourJoueur(Joueur unNom){
 
 
 public boolean LigneAligne(int l, int c){
-        for (int compteur=0; compteur<3; compteur++){
-            if(Cellules[l][c].jetonCourant == Cellules[l][c+compteur].jetonCourant){
-                return true;
+int compteur=1;
+if(Cellules[l][c].jetonCourant.Couleur == Cellules[l][c+1].jetonCourant.Couleur){
+    compteur+=1;
+    if (Cellules[l][c+1].jetonCourant.Couleur == Cellules[l][c+2].jetonCourant.Couleur){
+        compteur+=1;
+        if (Cellules[l][c+2].jetonCourant.Couleur == Cellules[l][c+3].jetonCourant.Couleur){
+        compteur+=1;
             }
+        else {
+            compteur=1;
         }
-   return false;
+    }
+    else{
+        compteur=1;
+    }
+}
+else{
+    compteur=1;
+}
+if (compteur==4){
+    return true;
+}
+return false;
 }
 
+
 public boolean ColonneAligne(int l, int c){
-        for (int compteur=0; compteur<3; compteur++){
-            if(Cellules[l][c].jetonCourant == Cellules[l+compteur][c].jetonCourant){
-                return true;
+    int compteur=1;   
+    if(Cellules[l][c].jetonCourant.Couleur == Cellules[l+1][c].jetonCourant.Couleur){
+        compteur+=1;
+            if (Cellules[l+1][c].jetonCourant.Couleur == Cellules[l+2][c].jetonCourant.Couleur){
+        compteur+=1;
+            if (Cellules[l+2][c].jetonCourant.Couleur == Cellules[l+3][c].jetonCourant.Couleur){
+        compteur+=1;
+                }
             }
-        }
-   return false;
+    }
+    if (compteur==4){
+        return true;
+    }
+   return false; 
 }
 
 public boolean DiagoAscAligne(int l, int c){
