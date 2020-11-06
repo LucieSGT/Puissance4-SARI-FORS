@@ -186,13 +186,16 @@ public void  tasserGrille(int l, int c){
     }
 }
 
-public boolean  colonneRemplie(int c){
+/*public boolean  colonneRemplie(int c){
     for (int l=0; l<6; l++){
         if (Cellules[l][c].jetonCourant==null){
             return false ;
         }
     }
     return true ;
+}*/
+public boolean colonneRemplie(int c){
+    return {Cellules[5][c].recupererJeton()!=null};
 }
 
 public boolean  placerDesintegrateur(int l, int c){
