@@ -51,6 +51,9 @@ public boolean supprimerJeton(){
         return true;
     }
 }
+ 
+    
+
   
 public boolean placerTrouNoir(){
        if (trouNoir = false){
@@ -75,6 +78,10 @@ public boolean placerDesintegrateur(){
       return false;
     }
 }
+ // signale la presence de desintegrateur, on va l'utiliser dans recupererdesintegrateur -> evite la surcharge mais pas indispensable  
+/* boolean Desintegrateur(){
+     return desintegrateur;
+ }*/
 
 public String lireCouleurDuJeton(){
     if (jetonCourant == null){
@@ -84,7 +91,8 @@ public String lireCouleurDuJeton(){
     return jetonCourant.Couleur;
 }
 
-public boolean recupererDesintegrateur(){
+// LE NOTRE
+/*public boolean recupererDesintegrateur(){
     if(desintegrateur =! false){
         desintegrateur = false;
          System.out.println("suppression du desintegrateur faite");
@@ -94,9 +102,16 @@ public boolean recupererDesintegrateur(){
          System.out.println("pas de desintegrateur present");
          return false;   
     } 
-}
+}*/
 
-public boolean activerTrouNoir(){
+    
+// signale la presence d'un trou noir
+/*boolean TrouNoir(){
+    return trouNoir;
+}*/
+
+// LE NOTRE    
+/*public boolean activerTrouNoir(){
     if(trouNoir = true){
         jetonCourant=null;
         trouNoir = false;
@@ -109,6 +124,19 @@ public boolean activerTrouNoir(){
        
     }
     
-}
+}*/ 
+
+ //LE NOUVEAU
+  public boolean activerTrouNoir(){
+      if(trouNoir){
+          jetonCourant=null;
+          trouNoir=false;
+          System.out.println("Plus de jeton! le trou noir l'a avalé");
+          return true;
+      }
+      else{
+      return false;
+      }
+  }
 
 }
