@@ -61,10 +61,20 @@ public void initialiserPartie(){
 public void debuterPartie(){
     initialiserPartie();
     //Menu();
+    
+    
     GrilleJeu.afficherGrilleSurConsole();// ajouter condition qui gagne qui perd dans autre méthode continuerpartie
-    jouerJeton();
-    //CouleurSuivante(joueurCourant);
-    jouerJeton();
+   
+    // il faut ensuite faire les 2 instructions ci dessous dans une boucle :
+   //  tant que la partie n'est gagnante ni pour J1, ni pour J2, et que la grilel n'est pas pleine faire :
+     // BD :  pour changer de joueur, il faut cjanger de joueur courant 
+     jouerJeton();  
+     joueurCourant = CouleurSuivante(joueurCourant);
+  
+     
+     
+     jouerJeton();
+
     //GrilleJeu.etreGagnantePourJoueur(joueurCourant);
     jouerJeton();
     //GrilleJeu.etreGagnantePourJoueur(joueurCourant);
@@ -128,6 +138,8 @@ public Joueur CouleurSuivante (Joueur unNom){
     else {
         return ListeJoueurs[0];
     }
+}
+
 }
 
 

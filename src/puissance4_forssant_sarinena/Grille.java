@@ -195,7 +195,7 @@ public void  tasserGrille(int l, int c){
     return true ;
 }*/
 public boolean colonneRemplie(int c){
-    return {Cellules[5][c].recupererJeton()!=null};
+    return (Cellules[5][c].recupererJeton()!=null);
 }
 
 public boolean  placerDesintegrateur(int l, int c){
